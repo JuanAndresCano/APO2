@@ -26,7 +26,7 @@ public class CentralPacientes {
 	 */
 	public String buscarPaciente(int code) {
 		String out= "El paciente con codigo " + code+ " no está registrado";
-		Paciente p = (Paciente)pacientes.buscar(code+"");
+		Paciente p = (Paciente)pacientes.buscar(code);
 		
 		if (p!=null)
 			out= "El paciente con cOdigo " + code + " está registrado" ;

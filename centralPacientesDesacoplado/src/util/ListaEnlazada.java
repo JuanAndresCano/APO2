@@ -108,7 +108,7 @@ public class ListaEnlazada implements Lista {
 			}
 			//si se llegO al ultimo nodo y aun no se encuentra la clave 
 			if (actual.getSiguiente()==null && found==null) {
-				if (actual.getContenido().equals(clave)){ //buscando en el ultimo nodo
+				if (actual.getContenido() == (clave)){ //buscando en el ultimo nodo
 					found = actual.getContenido();
 				}
 			}
