@@ -31,7 +31,8 @@ public class Executable {
             System.out.println("3. Find the sucesor of a number in the tree");
             System.out.println("4. Find the predecesor of the number in the tree");
             System.out.println("5. Find how deep is the tree");
-            System.out.println("6. Exit");
+            System.out.println("6. Find common ancestors");
+            System.out.println("7. Exit");
             
 
             choose = reader.nextInt();
@@ -57,7 +58,11 @@ public class Executable {
                 case 5: 
                     deeperFinder();
                     break;
+
                 case 6:
+                    findCommonAncestor();
+                    break;
+                case 7:
                     flag = true;
                     break;
 
@@ -88,6 +93,17 @@ public class Executable {
 
     public void deeperFinder(){
         System.out.println(controller.deeperFinder());
+    }
+
+    public void findCommonAncestor(){
+
+        System.out.println("Type the first number");
+        int num1 = reader.nextInt();
+
+        System.out.println("Type the second number");
+        int num2 = reader.nextInt();
+
+        System.out.println(controller.findCommonAncestor(num1, num2));
     }
 }
 

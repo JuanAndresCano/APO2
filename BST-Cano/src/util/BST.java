@@ -409,6 +409,87 @@ public class BST implements Tree{
         return maxCount;
 
     }
+    public int findCommonAncestor(int n1, int n2){
+        int ans = -1;
+        BSTNodo nodo1 = searchNodo(n1);
+        BSTNodo nodo2 = searchNodo(n2);
+
+        if (nodo1 == null || nodo2 == null){
+            ans = -1;
+        }else{
+            if(nodo1.getFather().getContent() == nodo2.getFather().getContent()){
+                ans = nodo1.getFather().getContent();
+            }else{
+                
+            }
+        }
+        return ans;
+    }
+
+    public int findAncestorRecursive(int n, BSTNodo actual){
+        int ans = -1;
+
+        return ans;
+    }
+
+    public BSTNodo searchNodo(int content) {
+        BSTNodo ans;
+        
+        if(root == null){
+            ans = null;
+        }else{
+
+        
+            if (root.getContent() == content){
+                ans = root;
+            }else{
+                if(content < root.getContent()){
+                    if (root.getLeft()==null){
+                        ans = root.getLeft();
+                    }else{
+                        ans = searchNodoRecursive(root.getLeft(), content);
+                    }
+
+                }else{
+                    if(root.getRight() == null){
+                        ans = root.getRight();
+                    }else{
+                        
+                        ans = searchNodoRecursive(root.getRight(), content);
+                    }
+                }
+            }
+        }
+
+        return ans;
+
+    }
+
+    public BSTNodo searchNodoRecursive(BSTNodo actual, int content){
+        BSTNodo ans;
+        if (actual.getContent() == content){
+            ans = actual;
+        }else{
+            
+            if(content < actual.getContent()){
+                if (actual.getLeft()==null){
+                    ans = null;
+                }else{
+                    ans = searchNodoRecursive(actual.getLeft(), content);
+                }
+
+            }else{
+                if(actual.getRight() == null){
+                    ans = null;
+                }else{
+                    ans = searchNodoRecursive(actual.getRight(), content);
+                    
+                }
+            }
+        }
+
+        return ans;
+    }
 
     @Override
     public boolean isEmpty() {

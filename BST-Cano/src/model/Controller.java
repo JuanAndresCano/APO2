@@ -73,6 +73,12 @@ public class Controller {
         return ans;
     }
 
+    public String findCommonAncestor(int n1, int n2){
+        int ances = tree.findCommonAncestor(n1, n2);
+        String ans = ""; 
+        return ans;
+    }
+
     
     
     
